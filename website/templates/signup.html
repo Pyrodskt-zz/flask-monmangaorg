@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+
+{% block content%}
+
+<style>
+  .form {
+    width: 50%;
+  }
+</style>
+
+<center>
+    <h1>Sign-up</h1>
+    <form method="post">
+    
+      <div class="form-group row">
+        <label for="uname"><b>Username</b></label>
+        <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
+      </div>
+      <div class="form-group row">
+        <label for="psw"><b>Password</b></label>
+        <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
+      </div>
+      <div class="form-group row">
+        <label for="psw"><b>Repeat password</b></label>
+        <input type="password" class="form-control" placeholder="Repeat password" name="psw-repeat" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Sign-up</button>
+
+    </form>
+    </center>
+{% endblock %}

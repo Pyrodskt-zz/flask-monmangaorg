@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Manga
+{% endblock %}
+
+
+{% block content %}
+<h4>{{ result['title'] }}</h4>
+    <p>
+    {{ result['description'] }}
+    </p>
+    <h4>Alternative title</h4>
+    <ul class="list-group">
+        {% for title in result['altTitles'] %}
+            <li class="list-group-item">{{ title['en'] }}</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

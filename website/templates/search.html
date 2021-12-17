@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Search{% endblock %}
+
+
+{% block content %}
+<form method='POST'>
+    <div class="input-group mb-3">
+        <input name="search-input" type="search" class="form-control" id="datatable-search-input">
+        <div class="input-group-append">
+            <button type="submit" class="btn btn-outline-secondary">Search</button>
+
+        </div>
+
+      </div>
+      <label class="form-label" for="datatable-search-input">Results</label>
+
+</form>
+
+{% if results %}
+<div class="container-fluid">
+{% for result in results['response'] %}
+    <div class="border">
+    <button type="button" class="btn btn-light btn-block btn-lg">
+        <a href="/search/{{ results['response'][result]['id'] }}">{{ results['response'][result]['title'] }}</a>
+        <i class="bi bi-arrow-bar-right"></i>
+    </button>
+    </div>
+
+{% endfor %}
+</div>
+
+{% endif %}
+{% endblock %}
